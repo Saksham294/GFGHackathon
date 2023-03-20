@@ -1,0 +1,27 @@
+.musicPageContainer>h3{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin:5rem;
+
+}
+
+.sectionsContainer{
+    display: flex;
+
+    
+}
+.leftSection{
+    /* border:2px solid red; */
+    width: 20%;
+}
+
+.rightSection{
+    /* border:2px solid blue; */
+    width: 80%;
+
+}
+
+.itemsContainer{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,27 @@
+.musicCardContainer{
+
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    transition: transform 0.5s;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    margin: 1rem;
+}
+
+.musicCardContainer:hover{
+    transform: scale(1.1);
+}
+
+.musicCardContainer>a>img{
+    width: 250px;
+    height:200px;
+    border-radius: 20px;
+}
+
+.musicCardContainer>a>h5{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}

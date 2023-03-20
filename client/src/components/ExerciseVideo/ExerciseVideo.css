@@ -1,0 +1,21 @@
+.vidContainer{
+    /* border: 2px solid red; */
+    display:inline-block;
+margin-left: 25rem;
+overflow-y: hidden;
+}
+
+
+.vidContainer>h3{
+    text-align:center;
+    font-family: 'Montserrat';
+    margin: 2rem;
+    overflow-y: hidden;
+}
+
+.shareButtonsContainer{
+    text-align: right;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

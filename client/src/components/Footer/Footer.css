@@ -1,0 +1,97 @@
+.footer{
+    background-color: #ff6d6d;
+height: 100%;
+padding: 5rem;
+display: flex;
+color: white;
+
+}
+
+.subscribe{
+    /* border: 2px solid red; */
+    display: inline-block;
+    margin:1rem;
+    display: flex;
+
+}
+.subscribe>input{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #A9A9A9;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-left: 10px;
+
+    color: #A9A9A9;
+    border: 0;
+}
+.subscribe>input:focus{
+    outline: none;
+}
+
+.subscribe>button{
+margin: 0.5rem;
+margin-top: 1.4rem;
+
+
+}
+.subscribe>button:hover{
+    cursor: pointer;
+
+}
+
+.aboutCompanyContainer{
+    /* border: 2px solid blue; */
+    display: inline-block;
+    margin:1rem;
+    padding: 1rem;
+    margin-left: 15rem;
+
+}
+
+.aboutCompany>ul{
+    list-style-type: none;
+    font-family: 'Montserrat';
+
+}
+
+.aboutCompany>ul>li{
+    margin: 0.1rem;
+}
+
+.followUsContainer{
+    /* border: 2px solid red; */
+    display: inline-block;
+    margin:1rem;
+    padding: 1rem;
+
+}
+
+.followUs>ul{
+    list-style-type: none;
+    font-family: 'Montserrat';
+
+}
+
+.followUs>ul>li{
+    margin: 0.1rem;
+}
+
+.contactUsContainer{
+    /* border:2px solid green; */
+    display: inline-block;
+    margin:1rem;
+    padding: 1rem;
+
+}
+
+.contactUs>ul{
+    list-style-type: none;
+    font-family: 'Montserrat';
+
+}
+
+.contactUs>ul>li{
+    margin: 0.1rem;
+}
