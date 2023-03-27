@@ -3,6 +3,7 @@ import React from 'react'
 import ServicesCard from '../ServicesCard/ServicesCard'
 import './Home.css'
 
+
 const Home = () => {
 const bgImg="https://img.freepik.com/free-vector/flat-background-world-mental-health-day_23-2149624111.jpg?w=1480&t=st=1677856465~exp=1677857065~hmac=1838ba33a2827da915cfb9439a568d54c38b32b63efa22df94f17ff6101e65bc"
 
