@@ -13,6 +13,11 @@ const musicSchema=new mongoose.Schema({
         type:String,
         required:true
     }
+    ,
+    category:{
+        type:String,
+
+    },
 })
 
 module.exports=mongoose.model("Music",musicSchema)

@@ -27,7 +27,7 @@ export const loginUser=(email,password)=>async (dispatch )=>{
         })
     }
 }
-export const registerUser = (name, email, password,avatar,budget) => async (dispatch) => {
+export const registerUser = (name, email, password,city,avatar) => async (dispatch) => {
     try {
       dispatch({
         type: "registerRequest",
@@ -35,7 +35,7 @@ export const registerUser = (name, email, password,avatar,budget) => async (disp
 
       const { data } = await axios.post(
         "/api/register",
-        { name, email, password,avatar,budget },
+        { name, email, password, city,avatar },
         {
           headers: {
             "Content-Type": "application/json",
@@ -108,6 +108,8 @@ export const findDoctors = () => async (dispatch) => {
           type:"findDoctorsSuccess",
           payload:data.doctors
       })
+      console.log(data.doctors)
+
   } catch (error) {
       dispatch({
           type:"findDoctorsFailure",
@@ -138,101 +140,7 @@ export const getDoctorProfile = (id) => async (dispatch) => {
 }
 }
 
-// export const getMyTransactions = () => async (dispatch) => {
-//     try {
-//       dispatch({
-//         type: "myTransactionsRequest",
-//       });
-  
-//       const { data } = await axios.get("/api/myTransactions");
-//       dispatch({
-//         type: "myTransactionsSuccess",
-//         payload: data.myTransactions,
-//       });
-//       console.log(data.myTransactions)
-//     } catch (error) {
-//       console.log(error)
-//       dispatch({
-//         type: "myTransactionsFailure",
-//         payload: error.response.data.message,
-//       });
-//     }
-//   };
-
-// export const getOtherProfile=(id)=>async(dispatch)=>{
-//   try {
-//     dispatch({
-//       type: "loadOtherProfileRequest",
-//     });
-
-//     const { data } = await axios.get(`/api/user/${id}`);
-// console.log(data.user)
-//     dispatch({
-//       type: "loadOtherProfileSuccess",
-//       payload: data.user,
-//     });
-//   } catch (error) {
-//     console.log(error.response.data.message,)
-
-//     dispatch({
-//       type: "loadOtherProfileFailure",
-//       payload: error.response.data.message,
-//     });
-//   }
-// }
-
-// export const updatePassword=(oldPass,newPass)=>async (dispatch )=>{
-//   try {
-
-//       dispatch({
-//           type:"updatePasswordRequest"
-//       })
-
-//       const {data}=await axios.put("/api/updateMyPassword",{oldPass,newPass},{
-//           headers:{
-//               "Content-Type":"application/json"
-//           }
-//       })
-      
-//       dispatch({
-//           type:"updatePasswordSuccess",
-//           payload:data.message,
-//       })
-      
-//   } catch (error) {
-//       console.log(error)
-//       dispatch({
-//           type:"updatePasswordFailure",
-//           payload: error.response.data.message,
-//       })
-//   }
-// }
-
-// export const getAllUsers=(name="")=>async(dispatch)=>{
-//   try {
-
-//     dispatch({
-//         type:"allUsersRequest"
-//     })
-
-//     const {data}=await axios.get(`/api/users?name=${name}`)
-    
-//     dispatch({
-//         type:"allUsersSuccess",
-//         payload:data.users,
-//     })
-    
-// } catch (error) {
-//     console.log(error)
-//     dispatch({
-//         type:"allUsersFailure",
-//         payload: error.response.data.message,
-//     })
-// }
-// }
-
-
-export const registerDoctor = (name, email, password,avatar,phone,city) => async (dispatch) => {
+export const registerDoctor = (name, email, password,phone,city,avatar) => async (dispatch) => {
   try {
     dispatch({
       type: "doctorRegisterRequest",
@@ -245,6 +153,8 @@ export const registerDoctor = (name, email, password,avatar,phone,city) => async
       , password
       ,phone
       ,city
+      ,avatar
+     
     },
       {
         headers: {

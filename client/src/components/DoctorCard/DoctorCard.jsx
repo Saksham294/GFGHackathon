@@ -2,7 +2,7 @@ import React from 'react'
 import './DoctorCard.css'
 import { Typography } from '@mui/material'
 
-const DoctorCard = ({url,imgUrl,doctorName}) => {
+const DoctorCard = ({url,imgUrl,doctorName,city,phone}) => {
 
     return (
         <div>
@@ -14,6 +14,12 @@ const DoctorCard = ({url,imgUrl,doctorName}) => {
                         {doctorName}
                     </Typography>
                 </a>
+                <Typography variant='h6'>
+                    {city}
+                </Typography>
+                <Typography variant='h6'>
+                    Mobile: {phone}
+                </Typography>
             </div>
 
         </div>

@@ -19,14 +19,14 @@ const Navbar = () => {
         <div className="nav">
       
     <Link to='/'>  <div className="home">Home</div></Link>  
-       <Link to='/explore'><div className="explore">Explore</div></Link>
+
        <Link to='/aboutus'><div className="about-us">About Us</div></Link>  
 
 
         
         </div>
-        {isAuthenticated?<MenuBar className='menuBar'/>: <div className="login"><Link className='link' to="/login" style={{ textDecoration: 'none' }}>Login</Link></div>}
-           {isDocAuthenticated?<Link className='link' to="/newPost" style={{ textDecoration: 'none',color:"white" }} ><Button startIcon={<AddIcon/>} variant='contained' sx={{marginTop:"1.8rem",marginLeft:"1rem",backgroundColor:"#35dea0"}}>Add Post</Button></Link>:null}
+        {isDocAuthenticated||isAuthenticated?<MenuBar className='menuBar'/>: <div className="login"><Link className='link' to="/login" style={{ textDecoration: 'none' }}>Login</Link></div>}
+           {isDocAuthenticated?<Link className='link' to="/newPost" style={{ textDecoration: 'none',color:"white" }} ><Button startIcon={<AddIcon/>} variant='contained' sx={{marginTop:"1.8rem",marginLeft:"2rem",backgroundColor:"#ff6d6d","&:hover":{backgroundColor:"#ff6d6d",color:"white"}}}>Add Post</Button></Link>:null}
         
      </div>
     )

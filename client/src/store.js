@@ -1,13 +1,17 @@
-import {configureStore} from '@reduxjs/toolkit';
-import {userReducer,doctorsReducer, doctorReducer} from './Reducers/userReducer';
+import { configureStore } from '@reduxjs/toolkit';
+import { userReducer, doctorsReducer, doctorReducer } from './Reducers/userReducer';
+import { filterReducer, getAllContentReducer,postContentReducer } from './Reducers/contentReducer';
 
 const initialState = {}
 
-const store = configureStore({ 
+const store = configureStore({
     reducer: {
         user: userReducer,
-doctors:doctorsReducer,
-doctor:doctorReducer,
+        doctors: doctorsReducer,
+        doctor: doctorReducer,
+        content:getAllContentReducer,
+        post: postContentReducer,
+        filter: filterReducer
     },
     preloadedState: initialState
 });

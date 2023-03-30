@@ -1,7 +1,7 @@
 import './App.css';
 import React,{useEffect} from 'react';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
-import { loadUser } from './Actions/userActions';
+import { loadUser,loadDoctor } from './Actions/userActions';
 import { useSelector,useDispatch } from 'react-redux';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -15,25 +15,33 @@ import Register from './components/Register/Register';
 import DoctorsPage from './components/DoctorsPage/DoctorsPage';
 import Community from './components/Community/Community';
 import AboutUs from './components/AboutUs/AboutUs';
-import Explore from './components/Explore/Explore';
 import DoctorLogin from './components/DoctorLogin/DoctorLogin';
 import DoctorRegister from './components/DoctorRegister/DoctorRegister';
+import ChatBot from './components/ChatBot/ChatBot';
+import NewPost from './components/NewPost/NewPost';
+import PostPage from './components/PostPage/PostPage';
+import { getAllArticles,getAllMusic,getAllVideos } from './Actions/contentActions';
 
 
 function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(loadUser())
- 
+    dispatch(loadDoctor())
+    dispatch(getAllArticles())
+    dispatch(getAllMusic())
+    dispatch(getAllVideos())
   },[dispatch])
 
 
   const {isAuthenticated} = useSelector(state => state.user)
+  const {isDocAuthenticated} = useSelector(state => state.doctor)
   return (
     <div className="App">
    
       <Router>
       <Navbar/>
+    
         <Routes>
           <Route path="/" element={<Home/>}/>
 
@@ -45,14 +53,16 @@ function App() {
           <Route path='/articles' element={<ArticlesPage/>}/>
           <Route path='/exercises' element={<Exercises/>}/>
           <Route path='/login' element={<Login/>}/>
-          <Route path='/register' element={<Register/>}/>
+          <Route path='/register' element={isAuthenticated||isDocAuthenticated?<Home/>:<Register/>}/>
           <Route path='/aboutus' element={<AboutUs/>}/>
-          <Route path='/explore' element={<Explore/>}/>
-          <Route path='/doctor/login' element={<DoctorLogin/>}/>
-          <Route path='/doctor/register' element={<DoctorRegister/>}/>
-
+          <Route path='/doctor/login' element={isDocAuthenticated||isAuthenticated?<Home/>:<DoctorLogin/>}/>
+          <Route path='/doctor/register' element={isDocAuthenticated||isAuthenticated?<Home/>:<DoctorRegister/>}/>
+          <Route path='/getPost/:id' element={<PostPage/>}></Route>
+          <Route path='/newpost' element={isDocAuthenticated?<NewPost/>:<DoctorLogin/>}/>
+      
 
         </Routes>
+        <ChatBot/>
       </Router>
 
 

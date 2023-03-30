@@ -15,16 +15,21 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-import { logoutUser } from '../../Actions/userActions';
+import { logoutUser,logoutDoctor } from '../../Actions/userActions';
 import './MenuBar.css'
 
 
 const MenuBar = () => {
 
   const {user,loading:userLoading}=useSelector((state)=>state.user)
+  const {doctor,loading:doctorLoading}=useSelector((state)=>state.doctor)
   let userImage="";
-  if(user.avatar!=undefined){
+
+  if(user!=undefined && user.avatar!=undefined){
        userImage=user.avatar.url;
+  }
+  if(doctor!=undefined && doctor.avatar!=undefined){
+    userImage=doctor.avatar.url;
   }
   
     const dispatch=useDispatch();
@@ -39,8 +44,16 @@ const MenuBar = () => {
       setAnchorEl(null);
     };
     const logoutHandler=()=>{
-        dispatch(logoutUser())
+        if(user){
+          dispatch(logoutUser())
         console.log("Logged out")
+        }
+        if(doctor){
+          dispatch(logoutDoctor())
+        console.log("Logged out")
+        }
+
+
             }
         
         
@@ -98,23 +111,10 @@ const MenuBar = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
        
-        <Link className='link' to="/account" style={{ textDecoration: 'none' }}>
-        <MenuItem>
-  
-My Profile
         
-        </MenuItem>
-        </Link>
-        <Divider />
+
        
-        <Link className='link' to='/updatePassword' style={{ textDecoration: 'none' }}>
-        <MenuItem>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-         Change Password
-        </MenuItem>
-        </Link>
+       
         <MenuItem onClick={logoutHandler}>
           <ListItemIcon>
             <Logout fontSize="small" />

@@ -3,6 +3,7 @@ const app=require("./app")
 const mongoose=require("mongoose")
 var cors=require('cors');
 const dotenv=require("dotenv")
+const cloudinary=require("cloudinary")
 
 dotenv.config()
 
@@ -10,11 +11,11 @@ app.use(cors());
 
 app.use(express.json())
 
-// cloudinary.config({
-//     cloud_name: process.env.CLOUD_NAME,
-//   api_key:  process.env.API_KEY,
-//   api_secret:   process.env.API_SECRET,
-// })
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+  api_key:  process.env.API_KEY,
+  api_secret:   process.env.API_SECRET,
+})
 
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.MONGODB,{

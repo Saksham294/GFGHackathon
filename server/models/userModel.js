@@ -22,8 +22,9 @@ const userSchema=new mongoose.Schema({
     },
     city:{
         type:String,
-        required: [true, "Please enter your city"],
+        required: [true, "Please enter a city"],
     }
+
 })
 
 userSchema.pre("save",async function(next){

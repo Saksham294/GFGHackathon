@@ -34,7 +34,7 @@ function DoctorRegister() {
   const loginHandler = (e) => {
     e.preventDefault()
     if (password === confirmPass) {
-      dispatch(registerDoctor(name, email, password, city,phone))
+      dispatch(registerDoctor(name, email, password,phone, city,avatar))
     }
     else {
       console.log("Passwords don't match")

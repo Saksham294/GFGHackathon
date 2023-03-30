@@ -42,8 +42,8 @@ const arr=[
 
 
     return (
-        <div>
-            <Typography>MERA MANN</Typography>
+        <div className='insideHome'>
+            <Typography variant='h1'>MERA MANN</Typography>
             <img src={bgImg} alt="background" className="bgImg"/>
             <div className="servicesContainer">
             {
