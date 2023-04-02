@@ -1,0 +1,4 @@
+.community__body__posts{
+    display: flex;
+    flex-wrap: wrap;
+}
