@@ -18,7 +18,7 @@ cloudinary.config({
 })
 
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MONGODB,{
+mongoose.connect("mongodb://0.0.0.0:27017/mera",{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
@@ -29,6 +29,6 @@ mongoose.connect(process.env.MONGODB,{
 });
 
 
-app.listen(process.env.PORT,()=>{
-    console.log(`Server started at port ${process.env.PORT}`)
+app.listen(4000,()=>{
+    console.log(`Server started at port }`)
 })
