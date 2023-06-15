@@ -1,6 +1,6 @@
-# GFG-Hackathon
+# Mera Mann
 
-We created a mental healthcare platform for the Google Developer Solution Challenge called as Mera Mann. The platform aims to provide users 
+Introducing Mera Mann, the all-in-one mental healthcare app. Get personalized AI Chatbot support, credible articles from doctors, science-backed mental health info, curated music for relaxation, and guided exercises to improve your well-being. Empower your mental health journey with Mera Mann.
 
 ## Features
 - An advanced AI Chatbot to resolve mental health queries of users
